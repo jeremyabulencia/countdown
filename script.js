@@ -2,10 +2,11 @@
     $.fn.countdownTimer = function (options) {
         var settings = $.extend({
             targetDate: new Date(),
-            borderStyle: "none",
             border: "1px solid black",
             fontStyle: "Arial",
             fontColor: "black",
+            numFontSize: "10px",
+            labelFontSize: "5px",
             callback: function () {},
         }, options);
         
@@ -15,16 +16,18 @@
             var days, hours, minutes, seconds;
             
             htmlElem = "<ul>"+
-                "<li><span id='dd' class='nums'></span><span>Days</span></li>"+
-                "<li><span id='hh' class='nums'></span><span>Hours</span></li>"+
-                "<li><span id='mm' class='nums'></span><span>Minutes</span></li>"+
-                "<li><span id='ss' class='nums'></span><span>Seconds</span></li>"+
+                "<li><span id='dd' class='nums'></span><span class='label'>DAYS</span></li>"+
+                "<li><span id='hh' class='nums'></span><span class='label'>HOURS</span></li>"+
+                "<li><span id='mm' class='nums'></span><span class='label'>MINUTES</span></li>"+
+                "<li><span id='ss' class='nums'></span><span class='label'>SECONDS</span></li>"+
             "</ul>";
             $this.append(htmlElem);
 
             $('li').css('font-style', settings.fontStyle);
             $('li').css('color', settings.fontColor);
             $("li .nums").css('border', settings.border);
+            $("li .nums").css('font-size', settings.numFontSize);
+            $("li .label").css('font-size', settings.labelFontSize);
             
             function updateTimer() {
                 var now = new Date();

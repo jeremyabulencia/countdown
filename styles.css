@@ -5,15 +5,18 @@
         display: flex;
         list-style-type: disc;
         li {
-            width: 100%;
+            width: auto;
+            margin:auto;
             display:inline;
             padding:5px;
-            margin:5px;
-            
+
+            .nums{
+                padding: 20px 20px;
+            }
+
             span {
                 display: block;
                 text-align: center;
-                padding:3px;
             }
         }
     }
